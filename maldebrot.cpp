@@ -8,16 +8,16 @@
 const int HEIGHT = 600;
 const int WIDTH  = 800;
 
-void mm128_set_ps(float vec[8], float x);
+void mm128_set_ps(float dst[8], float x);
 void mm128_add_ps(float dst[8], float src[8]);
 void mm128_sub_ps(float dst[8], float src[8]);
 void mm128_mul_ps(float dst[8], float src[8]);
 void mm128_cpy_ps(float dst[8], float src[8]);
 void mm128_cmp_ps(float a[8], float b[8], int cmp[8]);
 
-void mm128_set_ps(float vec[8], float x)
+void mm128_set_ps(float dst[8], float x)
 {
-    for (int i = 0; i < 8; i++) vec[i] = x;
+    for (int i = 0; i < 8; i++) dst[i] = x;
 }
 
 void mm128_add_ps(float dst[8], float src[8])
@@ -72,73 +72,49 @@ int main()
         BeginDrawing();
         ClearBackground(BLACK);
 
-        clock_t start_time = clock();
-
         for (int y_i = 0; y_i < HEIGHT; y_i++)
         {   
-            float coeff[8] = {};
-            mm128_set_ps(coeff, dx * zoom);
-            mm128_mul_ps(_0123, coeff);
+            float coeff[8] = {}; for (int i = 0; i < 8; i++) coeff[i] = dx * zoom * _0123[i];
 
             for (int x_i = 0; x_i < WIDTH; x_i += 8)
             {
-                float x0[8] = {};
-                float y0[8] = {};
 
                 float x_0 = (((float)x_i - WIDTH  / 2) * dx) * zoom + x_offset;
                 float y_0 = (((float)y_i - HEIGHT / 2) * dy) * zoom + y_offset; 
 
-               // printf("x_0: %g    y_0: %g\n", dx, y_0);
+                float x0[8] = {}; for (int i = 0; i < 8; i++) x0[i] = x_0;
+                float y0[8] = {}; for (int i = 0; i < 8; i++) y0[i] = y_0;
 
-                mm128_set_ps(x0, x_0);
-                mm128_set_ps(y0, y_0);
+               // printf("x_0: %g    y_0: %g\n", dx, y_0);
 
                 //for (int i = 0; i < 8; ++i) printf("%f %f %f %f\n", x0[0], x0[1], x0[2], x0[3]);
 
-                mm128_add_ps(x0, _0123);
+                for (int i = 0; i < 8; i++) x0[i] += coeff[i];
 
-                float X[8] = {};
-                float Y[8] = {};
-
-                mm128_cpy_ps(X, x0);
-                mm128_cpy_ps(Y, y0);
+                float X[8] = {}; for (int i = 0; i < 8; i++) X[i] = x0[i];
+                float Y[8] = {}; for (int i = 0; i < 8; i++) Y[i] = y0[i];
                 
                 int cmp[8] = {};
                 int N[8]   = {};
 
                 for (int N_i = 0; N_i < N_max; N_i++)
                 {
-                    float x2[8] = {};
-                    float y2[8] = {};
-                    float xy[8] = {};
+                    float x2[8] = {}; for (int i = 0; i < 8; i++) x2[i] = X[i] * X[i];
+                    float y2[8] = {}; for (int i = 0; i < 8; i++) y2[i] = Y[i] * Y[i];
+                    float xy[8] = {}; for (int i = 0; i < 8; i++) xy[i] = X[i] * Y[i];
 
-                    mm128_cpy_ps(x2, X);
-                    mm128_cpy_ps(y2, Y);
-                    mm128_cpy_ps(xy, X);
-
-                    mm128_mul_ps(x2, x2);
-                    mm128_mul_ps(y2, y2);
-                    mm128_mul_ps(xy, Y);
-
-                    float r2[8] = {};
-                    mm128_cpy_ps(r2, x2);
-                    mm128_add_ps(r2, y2);
+                    float r2[8] = {}; for (int i = 0; i < 8; i++) r2[i] = x2[i] + y2[i];
 
                     int cmp[8] = {};
-                    mm128_cmp_ps(r2, r2_max, cmp);
+                    for (int i = 0; i < 8; i++) r2[i] <= r2_max[i] ? cmp[i] = 1 : cmp[i] = 0;
 
                     int mask = 0;
                     for (int i = 0 ; i < 8; ++i) mask += cmp[i] << i;
                     if (!mask)
                         break;
 
-                    mm128_cpy_ps(X, x2);
-                    mm128_sub_ps(X, y2);
-                    mm128_add_ps(X, x0);
-
-                    mm128_cpy_ps(Y, xy);
-                    mm128_add_ps(Y, xy);
-                    mm128_add_ps(Y, y0);
+                    for (int i = 0; i < 8; i++) X[i] = x2[i] - y2[i] + x0[i];
+                    for (int i = 0; i < 8; i++) Y[i] = 2 * xy[i] + y0[i];
 
                     for (int i = 0; i < 8; ++i) N[i] += cmp[i];
                 }
