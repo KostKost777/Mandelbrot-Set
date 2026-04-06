@@ -63,7 +63,7 @@ int main()
                     Y = xy + xy + y_0;
                 }
 
-                DrawPixel(x_i, y_i, (Color){N, N, N, 255});
+                DrawPixel(x_i, y_i, (Color){0, (uint8_t)N , (uint8_t)(N * 0.5) , 150});
             }
         }
 

@@ -102,7 +102,7 @@ int main()
                 int cmp[8]     = {};
                 uint8_t N[8]   = {};
 
-                for (int N_i = 0; N_i < N_max; N_i++)
+                for (uint8_t N_i = 0; N_i < N_max; N_i++)
                 {
                     float x2[8] = {}; mm256_cpy_ps(x2, X);
                     float y2[8] = {}; mm256_cpy_ps(y2, Y);
@@ -137,8 +137,8 @@ int main()
                 }
 
                 //for (int i = 0; i < 8; ++i) printf("%d %d %d %d\n", N[0], N[1], N[2], N[3]);
-
-                for (int i = 0; i < 8; ++i) DrawPixel(x_i + i, y_i, (Color){ N[i], N[i], N[i], 255});
+                for (int i = 0; i < 8; ++i) 
+                    DrawPixel(x_i + i, y_i, (Color){0, (uint8_t)N[i] , (uint8_t)(N[i] * 0.5) , 150});
             }
         }
 

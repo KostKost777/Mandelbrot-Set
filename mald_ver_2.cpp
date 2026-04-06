@@ -88,8 +88,8 @@ int main()
 
                 //for (int i = 0; i < 8; ++i) printf("%d %d %d %d\n", N[0], N[1], N[2], N[3]);
 
-                for (int i = 0; i < 8; ++i) DrawPixel(x_i + i, y_i, (Color){ N[i], N[i], N[i], 255});
-                
+                for (int i = 0; i < 8; ++i) 
+                    DrawPixel(x_i + i, y_i, (Color){0, (uint8_t)N[i] , (uint8_t)(N[i] * 0.5) , 150});                
             }
         }
 
