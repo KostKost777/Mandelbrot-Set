@@ -52,10 +52,6 @@ int main()
                 float x0[8] = {}; for (int i = 0; i < 8; i++) x0[i] = x_0;
                 float y0[8] = {}; for (int i = 0; i < 8; i++) y0[i] = y_0;
 
-               // printf("x_0: %g    y_0: %g\n", dx, y_0);
-
-                //for (int i = 0; i < 8; ++i) printf("%f %f %f %f\n", x0[0], x0[1], x0[2], x0[3]);
-
                 for (int i = 0; i < 8; i++) x0[i] += coeff[i];
 
                 float X[8] = {}; for (int i = 0; i < 8; i++) X[i] = x0[i];
@@ -85,8 +81,6 @@ int main()
 
                     for (int i = 0; i < 8; ++i) N[i] += cmp[i];
                 }
-
-                //for (int i = 0; i < 8; ++i) printf("%d %d %d %d\n", N[0], N[1], N[2], N[3]);
 
                 for (int i = 0; i < 8; ++i) 
                     DrawPixel(x_i + i, y_i, (Color){0, (uint8_t)N[i] , (uint8_t)(N[i] * 0.5) , 150});                

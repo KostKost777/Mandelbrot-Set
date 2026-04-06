@@ -10,11 +10,13 @@ const int HEIGHT = 600;
 const int WIDTH  = 800;
 
 void mm256_set_ps (float dst[8], float x);
+
 void mm256_add_ps (float dst[8], float src[8]);
 void mm256_sub_ps (float dst[8], float src[8]);
 void mm256_mul_ps (float dst[8], float src[8]);
 void mm256_cpy_ps (float dst[8], float src[8]);
-void mm256_cmp_ps (float a[8],   float b[8], int cmp[8]);
+
+void mm256_cmp_ps (float a[8], float b[8], int cmp[8]);
 
 void mm256_set_ps(float dst[8], float x)
 {
@@ -136,14 +138,12 @@ int main()
                     for (int i = 0; i < 8; ++i) N[i] += cmp[i];
                 }
 
-                //for (int i = 0; i < 8; ++i) printf("%d %d %d %d\n", N[0], N[1], N[2], N[3]);
                 for (int i = 0; i < 8; ++i) 
                     DrawPixel(x_i + i, y_i, (Color){0, (uint8_t)N[i] , (uint8_t)(N[i] * 0.5) , 150});
             }
         }
 
         DrawFPS(10, 10);
-
         EndDrawing();
     }
     
