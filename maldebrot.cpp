@@ -5,8 +5,8 @@
 
 // g++ maldebrot.cpp -o mald -lraylib -lX11 -lpthread -ldl -lrt -lm
 
-const int HEIGHT = 300;
-const int WIDTH  = 400;
+const int HEIGHT = 600;
+const int WIDTH  = 800;
 
 int main()
 {
