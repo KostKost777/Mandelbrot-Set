@@ -11,7 +11,15 @@ const int WIDTH  = 800;
 
 int main()
 {
-    InitWindow(WIDTH, HEIGHT, "MALDEBROT");
+    #ifndef BENCHMARK_MODE
+
+        InitWindow(WIDTH, HEIGHT, "MALDEBROT");
+
+    #else
+
+        int frame_counter = 0;
+
+    #endif
 
     uint8_t  N_max      = 255;
     float x_offset      = 0;
@@ -26,6 +34,17 @@ int main()
 
     while (!WindowShouldClose()) 
     {
+        #ifdef  BENCHMARK_MODE
+
+            if (frame_counter >= 1000)
+                break;
+
+        #else
+
+            clock_t start_time = clock();
+
+        #endif
+
         if (IsKeyDown(KEY_ESCAPE))       break;
 
         if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
@@ -36,8 +55,12 @@ int main()
         if (IsKeyDown(KEY_PAGE_UP))      scale    *=  1.1;
         if (IsKeyDown(KEY_PAGE_DOWN))    scale    /=  1.1;
 
-        BeginDrawing();
-        ClearBackground(BLACK);
+        #ifndef BENCHMARK_MODE
+
+            BeginDrawing();
+            ClearBackground(BLACK);
+
+        #endif
 
         float coeff[8] = {}; for (int i = 0; i < 8; i++) coeff[i] = dx * scale * _01234567[i];
 
@@ -82,15 +105,38 @@ int main()
                     for (int i = 0; i < 8; ++i) N[i] += cmp[i];
                 }
 
-                for (int i = 0; i < 8; ++i) 
-                    DrawPixel(x_i + i, y_i, (Color){0, (uint8_t)N[i] , (uint8_t)(N[i] * 0.5) , 150});                
+                #ifndef BENCHMARK_MODE
+
+                    for (int i = 0; i < 8; ++i) 
+                        DrawPixel(x_i + i, y_i, (Color){0, (uint8_t)N[i] , 
+                                                           (uint8_t)(N[i] * 0.5) , 150});
+
+                #endif                
             }
         }
 
-        DrawFPS(10, 10);
-        EndDrawing();
+        #ifndef BENCHMARK_MODE
+
+            EndDrawing();
+
+            clock_t end_time = clock();
+            double delta_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+            
+            printf("\rFPS: %.1lf   ", 1 / delta_time);
+            fflush(stdout);
+            
+        #else
+
+            frame_counter++;
+
+        #endif
     }
     
-    CloseWindow();
+    #ifndef BENCHMARK_MODE
+
+        CloseWindow();
+
+    #endif
+
     return 0;
 }

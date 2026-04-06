@@ -1,3 +1,5 @@
-mald
+mald*
 *.o
 *.asm
+*.txt
+*.md
