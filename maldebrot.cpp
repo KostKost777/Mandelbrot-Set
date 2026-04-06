@@ -18,6 +18,8 @@ int main()
     float y_offset = 0;
     float zoom     = 1;
 
+    int aaaa = 0;
+
     while (!WindowShouldClose()) 
     {
         if (IsKeyDown(KEY_ESCAPE))       break;
