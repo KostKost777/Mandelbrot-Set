@@ -19,6 +19,7 @@ int main()
     float dx            = 1.f / (float)WIDTH;
     float dy            = 1.f / (float)HEIGHT;
     float scale         = 2.5;
+    float base_offset   = -250.f;
 
     float _01234567[8]  = {0.f, 1.f, 2.f, 3.f, 4.f, 5.f, 6.f, 7.f};
     float r2_max[8]     = {4.f, 4.f, 4.f, 4.f, 4.f, 4.f, 4.f, 4.f};
@@ -44,7 +45,7 @@ int main()
 
         for (int y_i = 0; y_i < HEIGHT; y_i++, y_0 += dy * scale)
         { 
-            float x_0 = (-WIDTH / 2) * dx * scale + x_offset;
+            float x_0 = (-WIDTH / 2 + base_offset) * dx * scale + x_offset;
             
             for (int x_i = 0; x_i < WIDTH; x_i += 8, x_0 += 8 * dx * scale)
             {
