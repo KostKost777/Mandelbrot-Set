@@ -2,48 +2,57 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "raylib.h"
+
+#ifndef BENCHMARK_MODE
+
+    #include "raylib.h"
+    #define BREAK_CASE (!WindowShouldClose())
+
+#else
+
+    const int TOTAL_FRAMES = 1000;
+    #define BREAK_CASE (frame_counter < TOTAL_FRAMES)
+
+#endif
 
 // g++ -O3 maldebrot.cpp -o mald -lraylib -lX11 -lpthread -ldl -lrt -lm
 
 const int HEIGHT = 600;
 const int WIDTH  = 800;
 
-void mm256_set_ps (float dst[8], float x);
+static inline void mm256_set_ps (float dst[8], float x);
+static inline void mm256_add_ps (float dst[8], float src[8]);
+static inline void mm256_sub_ps (float dst[8], float src[8]);
+static inline void mm256_mul_ps (float dst[8], float src[8]);
+static inline void mm256_cpy_ps (float dst[8], float src[8]);
+static inline void mm256_cmp_ps (float a[8], float b[8], int cmp[8]);
 
-void mm256_add_ps (float dst[8], float src[8]);
-void mm256_sub_ps (float dst[8], float src[8]);
-void mm256_mul_ps (float dst[8], float src[8]);
-void mm256_cpy_ps (float dst[8], float src[8]);
-
-void mm256_cmp_ps (float a[8], float b[8], int cmp[8]);
-
-void mm256_set_ps(float dst[8], float x)
+static inline void mm256_set_ps(float dst[8], float x)
 {
     for (int i = 0; i < 8; i++) dst[i] = x;
 }
 
-void mm256_add_ps(float dst[8], float src[8])
+static inline void mm256_add_ps(float dst[8], float src[8])
 {
     for (int i = 0; i < 8; i++) dst[i] += src[i];
 }
 
-void mm256_sub_ps(float dst[8], float src[8])
+static inline void mm256_sub_ps(float dst[8], float src[8])
 {
     for (int i = 0; i < 8; i++) dst[i] -= src[i];
 }
 
-void mm256_mul_ps(float dst[8], float src[8])
+static inline void mm256_mul_ps(float dst[8], float src[8])
 {
     for (int i = 0; i < 8; i++) dst[i] *= src[i];
 }
 
-void mm256_cpy_ps(float dst[8], float src[8])
+static inline void mm256_cpy_ps(float dst[8], float src[8])
 {
     for (int i = 0; i < 8; i++) dst[i] = src[i];
 }
 
-void mm256_cmp_ps(float a[8], float b[8], int cmp[8])
+static inline void mm256_cmp_ps(float a[8], float b[8], int cmp[8])
 {
     for (int i = 0; i < 8; i++) a[i] <= b[i] ? cmp[i] = 1 : cmp[i] = 0;
 }
@@ -71,31 +80,22 @@ int main()
     float _01234567[8]  = {0.f, 1.f, 2.f, 3.f, 4.f, 5.f, 6.f, 7.f};
     float r2_max[8]     = {4.f, 4.f, 4.f, 4.f, 4.f, 4.f, 4.f, 4.f};
 
-    while (!WindowShouldClose()) 
+    while (BREAK_CASE) 
     {
-        #ifdef  BENCHMARK_MODE
-
-            if (frame_counter >= 1000)
-                break;
-
-        #else
+        #ifndef  BENCHMARK_MODE
 
             clock_t start_time = clock();
 
-        #endif
+            if (IsKeyDown(KEY_ESCAPE))       break;
 
-        if (IsKeyDown(KEY_ESCAPE))       break;
+            if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
+            if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
+            if (IsKeyDown(KEY_RIGHT))        x_offset += 20 * dx * scale;
+            if (IsKeyDown(KEY_UP))           y_offset -= 20 * dy * scale;
+            if (IsKeyDown(KEY_DOWN))         y_offset += 20 * dy * scale;
 
-        if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
-        if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
-        if (IsKeyDown(KEY_RIGHT))        x_offset += 20 * dx * scale;
-        if (IsKeyDown(KEY_UP))           y_offset -= 20 * dy * scale;
-        if (IsKeyDown(KEY_DOWN))         y_offset += 20 * dy * scale;
-
-        if (IsKeyDown(KEY_PAGE_UP))      scale    *=  1.1;
-        if (IsKeyDown(KEY_PAGE_DOWN))    scale    /=  1.1;
-
-        #ifndef BENCHMARK_MODE
+            if (IsKeyDown(KEY_PAGE_UP))      scale    *=  1.1;
+            if (IsKeyDown(KEY_PAGE_DOWN))    scale    /=  1.1;
 
             BeginDrawing();
             ClearBackground(BLACK);
@@ -163,9 +163,9 @@ int main()
 
                 #ifndef BENCHMARK_MODE
 
-                for (int i = 0; i < 8; ++i) 
-                    DrawPixel(x_i + i, y_i, (Color){0, (uint8_t)N[i], 
-                                                       (uint8_t)(N[i] * 0.5) , 150});
+                    for (int i = 0; i < 8; ++i) 
+                        DrawPixel(x_i + i, y_i, (Color){0, (uint8_t)N[i], 
+                                                           (uint8_t)(N[i] * 0.5) , 150});
 
                 #endif
             }
@@ -183,6 +183,7 @@ int main()
             
         #else
 
+            printf("FRAMES: %d\n", frame_counter);
             frame_counter++;
 
         #endif

@@ -4,7 +4,18 @@
 #include <stdint.h>
 #include <math.h>
 #include <immintrin.h>
-#include "raylib.h"
+
+#ifndef BENCHMARK_MODE
+
+    #include "raylib.h"
+    #define BREAK_CASE (!WindowShouldClose())
+
+#else
+
+    const int TOTAL_FRAMES = 1000;
+    #define BREAK_CASE (frame_counter < TOTAL_FRAMES)
+
+#endif
 
 // g++ -O3 maldebrot.cpp -o mald -lraylib -lX11 -lpthread -ldl -lrt -lm
 
@@ -36,31 +47,23 @@ int main()
     __m256 cnt_2         = _mm256_set1_ps (2.f);
     __m256 cnt_1         = _mm256_set1_ps (1.f);
 
-    while (!WindowShouldClose()) 
+    while (BREAK_CASE) 
     {
-        #ifdef  BENCHMARK_MODE
-
-            if (frame_counter >= 1000)
-                break;
-
-        #else
+        #ifndef  BENCHMARK_MODE
 
             clock_t start_time = clock();
 
-        #endif
 
-        if (IsKeyDown(KEY_ESCAPE))       break;
+            if (IsKeyDown(KEY_ESCAPE))       break;
 
-        if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
-        if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
-        if (IsKeyDown(KEY_RIGHT))        x_offset += 20 * dx * scale;
-        if (IsKeyDown(KEY_UP))           y_offset -= 20 * dy * scale;
-        if (IsKeyDown(KEY_DOWN))         y_offset += 20 * dy * scale;
+            if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
+            if (IsKeyDown(KEY_LEFT))         x_offset -= 20 * dx * scale;
+            if (IsKeyDown(KEY_RIGHT))        x_offset += 20 * dx * scale;
+            if (IsKeyDown(KEY_UP))           y_offset -= 20 * dy * scale;
+            if (IsKeyDown(KEY_DOWN))         y_offset += 20 * dy * scale;
 
-        if (IsKeyDown(KEY_PAGE_UP))      scale    *=  1.1;
-        if (IsKeyDown(KEY_PAGE_DOWN))    scale    /=  1.1;
-
-        #ifndef BENCHMARK_MODE
+            if (IsKeyDown(KEY_PAGE_UP))      scale    *=  1.1;
+            if (IsKeyDown(KEY_PAGE_DOWN))    scale    /=  1.1;
 
             BeginDrawing();
             ClearBackground(BLACK);
@@ -128,6 +131,7 @@ int main()
             
         #else
 
+            printf("FRAMES: %d\n", frame_counter);
             frame_counter++;
 
         #endif
