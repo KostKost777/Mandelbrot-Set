@@ -1,7 +1,6 @@
 mald*
 *.o
 *.asm
-*.md
 *.data
 *.data.old
 *.odt
