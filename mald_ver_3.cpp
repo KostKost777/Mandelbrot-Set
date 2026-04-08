@@ -124,8 +124,8 @@ int main()
                 float X[8] = {}; mm256_cpy_ps(X, x0);
                 float Y[8] = {}; mm256_cpy_ps(Y, y0);
 
-                int cmp[8]     = {};
-                uint8_t N[8]   = {};
+                int cmp[8]              = {};
+                volatile uint8_t N[8]   = {};
 
                 for (uint8_t N_i = 0; N_i < N_max; N_i++)
                 {
@@ -183,7 +183,7 @@ int main()
             
         #else
 
-            printf("FRAMES: %d\n", frame_counter);
+            //printf("FRAMES: %d\n", frame_counter);
             frame_counter++;
 
         #endif

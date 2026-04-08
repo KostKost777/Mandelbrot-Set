@@ -1,0 +1,325 @@
++++++++++++++++++++++++++++++++++++++++++_1_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +63.0°C  (high = +100.0°C, crit = +100.0°C)
+
+ Performance counter stats for './mald1':
+
+         70 375,63 msec task-clock                       #    0,999 CPUs utilized             
+               766      context-switches                 #   10,884 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    0,767 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 166 328 048      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 869 053 201      cpu_core/cycles/                 #    4,602 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 385 956 134      cpu_core/branches/               #  943,309 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 135 745      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,5 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      1,2 %  tma_frontend_bound     
+                                                  #     25,5 %  tma_retiring           
+
+      70,436409473 seconds time elapsed
+
+      70,372324000 seconds user
+       0,002999000 seconds sys
+
++++++++++++++++++++++++++++++++++++++++++_1_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++_2_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +61.0°C  (high = +100.0°C, crit = +100.0°C)
+
+Performance counter stats for './mald1':
+
+         71 732,68 msec task-clock                       #    0,999 CPUs utilized             
+               839      context-switches                 #   11,696 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    0,753 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 170 827 416      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 671 166 275      cpu_core/cycles/                 #    4,512 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 386 765 365      cpu_core/branches/               #  925,475 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 063 093      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,8 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      1,2 %  tma_frontend_bound     
+                                                  #     25,2 %  tma_retiring           
+
+      71,789725093 seconds time elapsed
+
+      71,729149000 seconds user
+       0,002999000 seconds sys
+
++++++++++++++++++++++++++++++++++++++++++_2_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++_3_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +53.0°C  (high = +100.0°C, crit = +100.0°C)
+
+Performance counter stats for './mald1':
+
+         72 086,11 msec task-clock                       #    0,999 CPUs utilized             
+               852      context-switches                 #   11,819 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    0,749 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 191 354 178      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 956 502 645      cpu_core/cycles/                 #    4,494 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 390 059 440      cpu_core/branches/               #  920,983 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 406 017      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,5 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      1,5 %  tma_frontend_bound     
+                                                  #     25,1 %  tma_retiring           
+
+      72,147130513 seconds time elapsed
+
+      72,085149000 seconds user
+       0,000000000 seconds sys
+
++++++++++++++++++++++++++++++++++++++++++_3_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +70.0°C  (high = +100.0°C, crit = +100.0°C)
+
+ Performance counter stats for './mald1':
+
+         71 812,11 msec task-clock                       #    0,999 CPUs utilized             
+               765      context-switches                 #   10,653 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    0,752 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 168 814 858      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 661 995 682      cpu_core/cycles/                 #    4,507 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 386 534 405      cpu_core/branches/               #  924,448 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 121 153      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,3 %  tma_backend_bound      
+                                                  #      1,2 %  tma_bad_speculation    
+                                                  #      1,5 %  tma_frontend_bound     
+                                                  #     25,0 %  tma_retiring           
+
+      71,880759819 seconds time elapsed
+
+      71,809915000 seconds user
+       0,002000000 seconds sys
+
++++++++++++++++++++++++++++++++++++++++++_4_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +58.0°C  (high = +100.0°C, crit = +100.0°C)
+
+Performance counter stats for './mald1':
+
+         70 351,53 msec task-clock                       #    0,998 CPUs utilized             
+             1 023      context-switches                 #   14,541 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                55      page-faults                      #    0,782 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 172 854 672      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 798 275 631      cpu_core/cycles/                 #    4,603 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 387 651 482      cpu_core/branches/               #  943,656 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 118 622      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,3 %  tma_backend_bound      
+                                                  #      1,2 %  tma_bad_speculation    
+                                                  #      1,2 %  tma_frontend_bound     
+                                                  #     25,4 %  tma_retiring           
+
+      70,504772240 seconds time elapsed
+
+      70,342211000 seconds user
+       0,009000000 seconds sys
+
++++++++++++++++++++++++++++++++++++++++++_4_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++_5_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +64.0°C  (high = +100.0°C, crit = +100.0°C)
+
+Performance counter stats for './mald1':
+
+         72 177,34 msec task-clock                       #    0,999 CPUs utilized             
+               870      context-switches                 #   12,054 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                53      page-faults                      #    0,734 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 193 514 889      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   324 001 129 604      cpu_core/cycles/                 #    4,489 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 389 916 742      cpu_core/branches/               #  919,817 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 496 554      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,0 %  tma_backend_bound      
+                                                  #      1,2 %  tma_bad_speculation    
+                                                  #      1,5 %  tma_frontend_bound     
+                                                  #     25,3 %  tma_retiring           
+
+      72,246401957 seconds time elapsed
+
+      72,173936000 seconds user
+       0,002999000 seconds sys
+       
++++++++++++++++++++++++++++++++++++++++++_5_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++_6_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +45.0°C  (high = +100.0°C, crit = +100.0°C)
+
+Performance counter stats for './mald1':
+
+         70 180,61 msec task-clock                       #    0,999 CPUs utilized             
+               732      context-switches                 #   10,430 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    0,769 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 169 327 768      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 844 506 327      cpu_core/cycles/                 #    4,614 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 386 477 110      cpu_core/branches/               #  945,938 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 292 394      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,5 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      1,2 %  tma_frontend_bound     
+                                                  #     25,5 %  tma_retiring           
+
+      70,252157101 seconds time elapsed
+
+      70,175796000 seconds user
+       0,003999000 seconds sys
++++++++++++++++++++++++++++++++++++++++++_6_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++_7_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +51.0°C  (high = +100.0°C, crit = +100.0°C)
+
+Performance counter stats for './mald1':
+
+         68 601,88 msec task-clock                       #    0,999 CPUs utilized             
+               664      context-switches                 #    9,679 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                55      page-faults                      #    0,802 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 144 969 911      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 693 345 336      cpu_core/cycles/                 #    4,718 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 382 871 158      cpu_core/branches/               #  967,654 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 057 641      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,3 %  tma_backend_bound      
+                                                  #      1,2 %  tma_bad_speculation    
+                                                  #      1,2 %  tma_frontend_bound     
+                                                  #     25,4 %  tma_retiring           
+
+      68,641520590 seconds time elapsed
+
+      68,599284000 seconds user
+       0,001999000 seconds sys
+
++++++++++++++++++++++++++++++++++++++++++_7_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++_8_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +54.0°C  (high = +100.0°C, crit = +100.0°C)
+
+Performance counter stats for './mald1':
+
+         69 083,74 msec task-clock                       #    0,999 CPUs utilized             
+               678      context-switches                 #    9,814 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                53      page-faults                      #    0,767 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 151 112 901      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 727 625 540      cpu_core/cycles/                 #    4,686 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 383 829 909      cpu_core/branches/               #  960,918 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 019 610      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,8 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      1,2 %  tma_frontend_bound     
+                                                  #     25,2 %  tma_retiring           
+
+      69,139778272 seconds time elapsed
+
+      69,078362000 seconds user
+       0,004999000 seconds sys
+
++++++++++++++++++++++++++++++++++++++++++_8_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++_9_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+Core 0:        +49.0°C  (high = +100.0°C, crit = +100.0°C)
+
+Performance counter stats for './mald1':
+
+         71 543,13 msec task-clock                       #    0,987 CPUs utilized             
+             3 321      context-switches                 #   46,420 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    0,755 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 207 642 269      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   324 163 879 543      cpu_core/cycles/                 #    4,531 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 392 275 510      cpu_core/branches/               #  928,004 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 478 839      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,2 %  tma_backend_bound      
+                                                  #      1,2 %  tma_bad_speculation    
+                                                  #      1,2 %  tma_frontend_bound     
+                                                  #     25,5 %  tma_retiring           
+
+      72,496472451 seconds time elapsed
+
+      71,504035000 seconds user
+       0,038029000 seconds sys
+
++++++++++++++++++++++++++++++++++++++++++_9_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++_10_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+Core 0:        +58.0°C  (high = +100.0°C, crit = +100.0°C)
+
+70 027,56 msec task-clock                       #    0,999 CPUs utilized             
+               810      context-switches                 #   11,567 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    0,771 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   491 171 148 569      cpu_core/instructions/           #    1,52  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   323 825 264 869      cpu_core/cycles/                 #    4,624 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    66 386 964 906      cpu_core/branches/               #  948,012 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+       163 184 571      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     72,2 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      1,5 %  tma_frontend_bound     
+                                                  #     25,5 %  tma_retiring           
+
+      70,085860966 seconds time elapsed
+
+      70,023966000 seconds user
+       0,002999000 seconds sys
+
+
++++++++++++++++++++++++++++++++++++++++++_10_Test_+++++++++++++++++++++++++++++++++++++++++++++++
+
+Среднее = 70,718 сек
+Стандартное отклонение    = ±1,170 сек
+Относительная погрешность = 1,65%

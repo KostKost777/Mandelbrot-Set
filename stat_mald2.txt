@@ -1,0 +1,333 @@
+
++++++++++++++++++++++++++++++++++++++++++ TEST 1 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         37 657,03 msec task-clock                       #    0,999 CPUs utilized             
+               437      context-switches                 #   11,605 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    1,434 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 964 206 556      cpu_core/instructions/           #    3,76  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 756 622 305      cpu_core/cycles/                 #    4,296 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 963 283 238      cpu_core/branches/               #  344,246 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 777 116      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,7 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     62,7 %  tma_retiring           
+
+      37,690595153 seconds time elapsed
+
+      37,653650000 seconds user
+       0,002999000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 1 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 2 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         37 148,77 msec task-clock                       #    0,999 CPUs utilized             
+               401      context-switches                 #   10,794 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                55      page-faults                      #    1,481 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 955 713 756      cpu_core/instructions/           #    3,76  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 637 756 983      cpu_core/cycles/                 #    4,351 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 961 934 858      cpu_core/branches/               #  348,920 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 815 524      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     34,8 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      1,2 %  tma_frontend_bound     
+                                                  #     63,3 %  tma_retiring           
+
+      37,168618749 seconds time elapsed
+
+      37,147330000 seconds user
+       0,000999000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 2 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 3 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         36 954,81 msec task-clock                       #    0,999 CPUs utilized             
+               392      context-switches                 #   10,608 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    1,461 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 952 311 526      cpu_core/instructions/           #    3,76  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 659 575 317      cpu_core/cycles/                 #    4,375 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 961 371 489      cpu_core/branches/               #  350,736 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 711 548      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,5 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     62,9 %  tma_retiring           
+
+      36,973464394 seconds time elapsed
+
+      36,953050000 seconds user
+       0,000999000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 3 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 4 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         38 071,49 msec task-clock                       #    0,991 CPUs utilized             
+             1 208      context-switches                 #   31,730 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    1,418 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 972 832 452      cpu_core/instructions/           #    3,75  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   162 007 021 393      cpu_core/cycles/                 #    4,255 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 964 454 456      cpu_core/branches/               #  340,529 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 873 267      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,4 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     63,0 %  tma_retiring           
+
+      38,434776530 seconds time elapsed
+
+      38,051714000 seconds user
+       0,019020000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 4 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 5 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         36 754,94 msec task-clock                       #    1,000 CPUs utilized             
+               400      context-switches                 #   10,883 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    1,469 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 949 461 664      cpu_core/instructions/           #    3,77  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 443 821 204      cpu_core/cycles/                 #    4,392 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 960 919 637      cpu_core/branches/               #  352,631 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 663 240      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,7 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     62,7 %  tma_retiring           
+
+      36,773037422 seconds time elapsed
+
+      36,752288000 seconds user
+       0,001999000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 5 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 6 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         36 643,51 msec task-clock                       #    1,000 CPUs utilized             
+               391      context-switches                 #   10,670 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    1,474 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 949 882 562      cpu_core/instructions/           #    3,77  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 349 731 482      cpu_core/cycles/                 #    4,403 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 961 019 941      cpu_core/branches/               #  353,706 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 663 505      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,5 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     62,9 %  tma_retiring           
+
+      36,661535735 seconds time elapsed
+
+      36,641114000 seconds user
+       0,001999000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 6 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 7 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         36 960,02 msec task-clock                       #    1,000 CPUs utilized             
+               389      context-switches                 #   10,525 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                55      page-faults                      #    1,488 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 955 654 977      cpu_core/instructions/           #    3,76  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 823 322 198      cpu_core/cycles/                 #    4,378 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 961 934 314      cpu_core/branches/               #  350,701 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 742 312      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,7 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     62,7 %  tma_retiring           
+
+      36,978102836 seconds time elapsed
+
+      36,957533000 seconds user
+       0,001999000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 7 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 8 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         36 245,18 msec task-clock                       #    0,999 CPUs utilized             
+               398      context-switches                 #   10,981 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                55      page-faults                      #    1,517 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 945 389 904      cpu_core/instructions/           #    3,77  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 469 595 268      cpu_core/cycles/                 #    4,455 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 960 190 374      cpu_core/branches/               #  357,570 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 704 210      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,5 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     62,9 %  tma_retiring           
+
+      36,274408075 seconds time elapsed
+
+      36,244892000 seconds user
+       0,000000000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 8 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 9 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         36 296,05 msec task-clock                       #    0,999 CPUs utilized             
+               382      context-switches                 #   10,525 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                55      page-faults                      #    1,515 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 945 904 878      cpu_core/instructions/           #    3,76  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 516 628 722      cpu_core/cycles/                 #    4,450 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 960 244 655      cpu_core/branches/               #  357,070 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 714 172      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,7 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     62,7 %  tma_retiring           
+
+      36,315881990 seconds time elapsed
+
+      36,295725000 seconds user
+       0,000000000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 9 +++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++ TEST 10 +++++++++++++++++++++++++++++++++++++++++
+
+
+ Performance counter stats for './mald2':
+
+         36 117,72 msec task-clock                       #    1,000 CPUs utilized             
+               367      context-switches                 #   10,161 /sec                      
+                 0      cpu-migrations                   #    0,000 /sec                      
+                54      page-faults                      #    1,495 /sec                      
+     <not counted>      cpu_atom/instructions/                                                  (0,00%)
+   607 940 468 228      cpu_core/instructions/           #    3,77  insn per cycle            
+     <not counted>      cpu_atom/cycles/                                                        (0,00%)
+   161 419 551 085      cpu_core/cycles/                 #    4,469 GHz                       
+     <not counted>      cpu_atom/branches/                                                      (0,00%)
+    12 959 355 178      cpu_core/branches/               #  358,809 M/sec                     
+     <not counted>      cpu_atom/branch-misses/                                                 (0,00%)
+        32 708 237      cpu_core/branch-misses/          #    0,25% of all branches           
+             TopdownL1 (cpu_core)                 #     35,9 %  tma_backend_bound      
+                                                  #      0,8 %  tma_bad_speculation    
+                                                  #      0,8 %  tma_frontend_bound     
+                                                  #     62,5 %  tma_retiring           
+
+      36,135434162 seconds time elapsed
+
+      36,117342000 seconds user
+       0,000000000 seconds sys
+
+
+
++++++++++++++++++++++++++++++++++++++++++ END TEST 10 +++++++++++++++++++++++++++++++++++++++++
+
+
+Среднее = 36,881 сек
+Стандартное отклонение = ±0,584 сек
+Относительная погрешность = 1,58%

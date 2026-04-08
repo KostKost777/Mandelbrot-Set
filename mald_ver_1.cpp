@@ -74,7 +74,8 @@ int main()
                 float X = 0;
                 float Y = 0;
 
-                uint8_t N = 0;
+                volatile uint8_t N = 0;
+                
                 for (; N < N_max; N++)
                 {
                     float x2 = X * X;

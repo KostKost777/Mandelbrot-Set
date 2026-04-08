@@ -86,8 +86,8 @@ int main()
                 __m256 X   = x0;
                 __m256 Y   = y0;
 
-                __m256 cmp = _mm256_setzero_ps();
-                __m256 N   = _mm256_setzero_ps();
+                __m256 cmp        = _mm256_setzero_ps();
+                volatile __m256 N = _mm256_setzero_ps();
 
                 for (uint8_t N_i = 0; N_i < N_max; N_i++)
                 {
@@ -131,7 +131,7 @@ int main()
             
         #else
 
-            printf("FRAMES: %d\n", frame_counter);
+            //printf("FRAMES: %d\n", frame_counter);
             frame_counter++;
 
         #endif

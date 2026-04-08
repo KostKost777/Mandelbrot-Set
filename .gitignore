@@ -1,5 +1,9 @@
 mald*
 *.o
 *.asm
-*.txt
 *.md
+*.data
+*.data.old
+*.odt
+tests_script
+tests_script.cpp
